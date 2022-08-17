@@ -8,16 +8,19 @@ public class Main {
         Scanner scanner = new Scanner(System.in);
 
         int num = 0;
-        while (num < 4) {
+        while (num < 5) {
+
             System.out.println("   Выберите операцию:");
             System.out.println("------------------------");
             System.out.println("1. Добавить в список покупок");
             System.out.println("2. Показать список покупок");
             System.out.println("3. Удалить из списка");
-            System.out.println("4. Завершить");
+            System.out.println("4. Поиск по ключевым словам");
+            System.out.println("5. Завершить");
             num = scanner.nextInt();
 
             switch (num) {
+
                 case 1:
                     scanner = new Scanner(System.in);
                     System.out.println("Какой товар желаете добавить в список покупок?");
@@ -57,6 +60,21 @@ public class Main {
                     }
                     System.out.println();
                     break;
+                case 4:
+                    System.out.println("Введите текст для поиска");
+                    scanner = new Scanner(System.in);
+                    String query = scanner.nextLine();
+                    String queryLower = query.toLowerCase();
+                    for (int i = 0; i < listGoods.size(); i++) {
+                        String item = listGoods.get(i);
+                        String itemLower = item.toLowerCase();
+                        if (itemLower.contains(queryLower)) {
+                            System.out.println((listGoods.indexOf(item) + 1) + ". " + item);
+                        }
+                    }
+                    System.out.println();
+                    break;
+
             }
         }
     }
