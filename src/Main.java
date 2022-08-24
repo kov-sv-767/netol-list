@@ -22,7 +22,7 @@ public class Main {
             switch (num) {
 
                 case 1:
-                    scanner = new Scanner(System.in);
+                    //scanner = new Scanner(System.in);
                     System.out.println("Какой товар желаете добавить в список покупок?");
                     String newGoods = scanner.nextLine();
                     listGoods.add(newGoods);
@@ -32,7 +32,7 @@ public class Main {
                     break;
                 case 2:
                     boolean list = listGoods.isEmpty();
-                    if (list == true) {
+                    if (list) {
                         System.out.println("Ваш список пуст");
                         System.out.println();
                     } else {
@@ -50,7 +50,7 @@ public class Main {
                     }
                     System.out.println();
                     System.out.println("Какую позицию хотите удалить? Введите номер или название");
-                    scanner = new Scanner(System.in);
+                    //scanner = new Scanner(System.in);
                     String removeGoods = scanner.nextLine();
                     try {
                         int numGoods = Integer.parseInt(removeGoods) - 1;
@@ -62,14 +62,14 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("Введите текст для поиска");
-                    scanner = new Scanner(System.in);
+                    //scanner = new Scanner(System.in);
                     String query = scanner.nextLine();
                     String queryLower = query.toLowerCase();
                     for (int i = 0; i < listGoods.size(); i++) {
                         String item = listGoods.get(i);
                         String itemLower = item.toLowerCase();
                         if (itemLower.contains(queryLower)) {
-                            System.out.println((listGoods.indexOf(item) + 1) + ". " + item);
+                            System.out.println((i + 1) + ". " + item);
                         }
                     }
                     System.out.println();
