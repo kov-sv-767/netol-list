@@ -17,12 +17,13 @@ public class Main {
             System.out.println("3. Удалить из списка");
             System.out.println("4. Поиск по ключевым словам");
             System.out.println("5. Завершить");
-            num = scanner.nextInt();
+            String input = scanner.nextLine();
+            num = Integer.parseInt(input);
+
 
             switch (num) {
 
                 case 1:
-                    //scanner = new Scanner(System.in);
                     System.out.println("Какой товар желаете добавить в список покупок?");
                     String newGoods = scanner.nextLine();
                     listGoods.add(newGoods);
@@ -50,7 +51,6 @@ public class Main {
                     }
                     System.out.println();
                     System.out.println("Какую позицию хотите удалить? Введите номер или название");
-                    //scanner = new Scanner(System.in);
                     String removeGoods = scanner.nextLine();
                     try {
                         int numGoods = Integer.parseInt(removeGoods) - 1;
@@ -62,7 +62,6 @@ public class Main {
                     break;
                 case 4:
                     System.out.println("Введите текст для поиска");
-                    //scanner = new Scanner(System.in);
                     String query = scanner.nextLine();
                     String queryLower = query.toLowerCase();
                     for (int i = 0; i < listGoods.size(); i++) {
